@@ -1,0 +1,355 @@
+<!DOCTYPE html  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> ">
+<html  xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết sản phẩm</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap-3.4.1.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="../bootstrap/js/jquery-3.5.1.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>   
+    <script src="../javscrip/chitiet1.js"></script>     
+    <script src="../javscrip/themvaogio.js"></script>
+    <style>
+        .Logo {display:none;}
+        .container{
+          vertical-align: middle;
+        }
+     
+         #hinhto{
+          transition-duration: 0.3s;
+        }
+        #hinhto:hover{
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+    	<div class="row">
+            <div class="col-sm-2 col-md-2  col-lg-2 col-xl-2" style="background-color:#81F7F3	;">
+    		</div>
+    		<div class="col-sm-8 col-md-8  col-lg-8 col-xl-8" style="background-color: #81F7F3	;">
+    			<img src="../hinh/vyyy.png" width="1000" height="300">
+    		</div>
+    		<div class="col-sm-2 col-md-2  col-lg-2 col-xl-2" style="background-color: #81F7F3	;"></div>
+    	</div>
+    	<div class="row">
+            <div class="col-sm col-md  col-lg col-xl " style="background-color: black;">                     
+                <nav class="navbar" style="background-color: black;">
+                    <div class="col-sm-7 col-md-7  col-lg-7 col-xl-7">
+                        <ul class="nav nav-tabs " style="font-size: 20px;">
+                            <li class="nav-item">
+                                <a class="nav-link" href="trangchu.html">Trang chủ</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Sản phẩm</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="dientienphat.html">Thiết bị Điện Tiến Phát</a>
+                                    <a class="dropdown-item" href="#">Thiết bị điện Faco</a>
+                                    <a class="dropdown-item" href="#">Thiết bị điện Rạng Đông</a>
+                                    <a class="dropdown-item" href="#">Thiết bị điện Panasonic</a>
+                                    <a class="dropdown-item" href="#">Thiết bị điện SINO</a>
+                                    <a class="dropdown-item" href="#">Quạt điện cao cấp SENKO</a>
+                                    <a class="dropdown-item" href="#">Đèn trang trí EUROTO</a>
+                                    <a class="dropdown-item" href="#">Ống nhựa GOMAX</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="gioithieu.html">Giới thiệu</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Khuyến mãi</a>
+                            </li>              
+                            <li class="nav-item">
+                                <a class="nav-link " href="#">Tin tức</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " href="#">Tuyển dụng</a>
+                            </li>                
+                            <li class="nav-item">
+                                <a class="nav-link " href="#">Liên hệ</a>
+                            </li>    
+                        </ul>
+                    </div>
+                    <div class="col-sm-1 col-md-1  col-lg-1 col-xl-1">
+                        <button type="button" class="btn btn-default btn-md" data-toggle="modal" data-target="#myModal">
+                            <span class="glyphicon glyphicon-shopping-cart"> </span>Giỏ hàng
+                        </button>
+                        <span style="color: yellow;" id="sl">Đã thêm: <i>0</i>  sp</span>
+                        <div class="modal" id="myModal">
+                            <div class="modal-dialog ">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4>Sản phẩm của bạn</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+                                    <div class="">
+                                        <div >
+                                           <table class="table" id="tbl">
+                                                <tr>
+                                                    <th>Sản phẩm </th>
+                                                    <th>Số lượng </th>
+                                                    <th>Đơn giá</th>
+                                                    <th>Thành tiền </th>                              
+                                                </tr>
+                                                <tr>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th>Tổng tiền:</th>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary order" data-dismiss="modal">Thanh toán</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="">
+                        <form class="form-inline" >
+                            <input class="form-control mr-sm-1" type="text" placeholder="Search">
+                            <button class="btn btn-success" type="submit">Search</button>
+                        </form>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-1 col-md-1 col-lg-1 col-xl-1">                
+            </div>             
+            <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                <input type="button" class="btn btn-primary"  id="" value="Sản phẩm" style="font-size: 35px;">
+                <div style="color: slateblue;">
+                    <b><h1 id="tile">Thiết bị Aptomat</h></b>
+                </div>
+                <div>
+                    <img src="../hinh/aptomat.jpg" alt="" id="hinhto">
+                    <div style="color: red;text-align: center;" >Giá bán: <span id="gia" >1154000 VNĐ</span>  <br> <br>
+                        <input type="button" class="btn btn-primary" name="" id="" value="Mua ngay" style="background-color: orange;">
+                        <input type="button" class="btn btn-primary"  id="" value="Thêm vào giỏ hàng" onclick="themvaogio()">
+                    </div>
+                    <br>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                <div style="margin-top: 150px; word-spacing: 2px; line-height: 25px;">
+                    <h4><u>Thông tin sản phẩm</u></h4>
+                    <b>MCCB </b> hay còn gọi là <b>Aptomat khối - Cầu dao
+                     tự <br> động dạng khối </b>  được sản xuất bởi <br> Schneiderlà dòng 
+                     sản phẩm chất lượng cao. <br> Thương hiệu Schneider là thương hiệu hàng 
+                     đầu  <br> trong lĩnh vực  sản xuất thiết bị điện. <br> MCCB Schneider có nhiều 
+                     dòng sản <br> phẩm đáp ứng mọi  yêu cầu trong công nghiệp và dân dụng.
+                    <br>
+                    <b>Nhà sản xuât:</b> Schneider Electric <br>
+                    <b>Mã sản phẩm:</b> EZC100B3030 <br>
+                    <b>Mô tả :</b> Aptomat khối(MCCB) Easypast 3 pha <br>
+                     Frame size 1000AF, dòng đinh <br> mức 30A, dòng cắt ngắn mạch 7.5kA
+                </div>         
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                <div class="container-fluid" style="background-color: #EECBAD; margin-top: 110px;" >
+                    <div class="row" >                 
+                        <h3 style=" color: red; ">Sản phẩm từ các thương hiệu hàng đầu</h3>               
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2"></div>
+                        <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2" >
+                            <img src="../hinh/ctiet1.jpg" id="logo" width="300" height="400">                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2">
+            </div>
+            <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8" style="color: red; background-color: #EECBAD;">
+                <h2>Một số sản phẩm liên quan</h2>
+            </div> 
+        </div>
+        <br>
+        <div class=" row">
+            <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2">
+            </div>
+            <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                    <img src="../hinh/chitiet1.jpg" alt=""  width="200px" height="200px" id="hinhto">
+                    <h4 class="" style="color: slateblue;">MCCB 3P LS  250A (42kA)</h4>
+                    <h5 style="color: darkgrey;"> Hãng sản xuất:	LS <br>
+                     Model:	ABN403C250A <br>
+                     Xuất xứ:	Hàn Quốc</h5>
+                    <h5 style="color: red;">Giá bán:3,291,200 VND</h5>
+                    <a href="#" class="btn btn-primary">Chi tiết</a>     
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                    <img src="../hinh/chitiet2.jfif" alt=""  width="200px" height="200px" id="hinhto">
+                    <h4 class="card-tile" style="color: slateblue;">MCCB 3P LS ABS33C 5A, 10A</h4>
+                    <h5 style="color: darkgrey;"> Hãng sản xuất:	LS <br>
+                     Model:	ABN403C250A <br>
+                     Xuất xứ:	Hàn Quốc</h5>
+                    <h5 style="color: red;">Giá bán:1,291,200 VND</h5>
+                    <a href="#" class="btn btn-primary">Chi tiết</a>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                    <img src="../hinh/chitiet3.jfif" alt=""  width="200px" height="200px" id="hinhto">
+                    <h4 class="" style="color: slateblue;">MCCB 3P LS ABN53c 40A (18kA)</h4>
+                    <h5 style="color: darkgrey;"> Hãng sản xuất:	LS <br>
+                      Model:	ABN403C250A <br>
+                      Xuất xứ:	Hàn Quốc</h5>
+                    <h5 style="color: red;">Giá bán:3,291,200 VND</h5>
+                    <a href="#" class="btn btn-primary">Chi tiết</a>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                    <img src="../hinh/chitiet4.png" alt=""   width="200px" height="200px" id="hinhto">
+                    <h4 class="" style="color: slateblue;">MCCB 3P LS  250A (42kA)</h4>
+                    <h5 style="color: darkgrey;"> Hãng sản xuất:	LS <br>
+                      Model:	ABN403C250A <br>
+                      Xuất xứ:	Hàn Quốc</h5>
+                    <h5 style="color: red;">Giá bán:1,091,200 VND</h5>
+                    <a href="#" class="btn btn-primary">Chi tiết</a>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2">
+            </div>
+            <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                    <img src="../hinh/chitiet5.jfif" alt=""  width="200px" height="200px" id="hinhto">
+                    <h4 class="" style="color: slateblue;">MCCB 3P LS ABS803c 800A (75kA)</h4>
+                    <h5 style="color: darkgrey;"> Hãng sản xuất:	LS <br>
+                     Model:	ABN403C250A <br>
+                     Xuất xứ:	Hàn Quốc</h5>
+                    <h5 style="color: red;">Giá bán:3,291,200 VND</h5>
+                    <a href="#" class="btn btn-primary">Chi tiết</a>    
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                    <img src="../hinh/chitiet6.jpg" alt=""  width="200px" height="200px" id="hinhto">
+                    <h4 class="card-tile" style="color: slateblue;">MCCB 3P LS ABS803c 500-630A (75kA)</h4>
+                    <h5 style="color: darkgrey;"> Hãng sản xuất:	LS <br>
+                     Model:	ABN403C250A <br>
+                     Xuất xứ:	Hàn Quốc</h5>
+                    <h5 style="color: red;">Giá bán:2,291,200 VND</h5>
+                    <a href="#" class="btn btn-primary">Chi tiết</a>       
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                    <img src="../hinh/chitiet7.jfif" alt=""  width="200px" height="200px" id="hinhto">
+                    <h4 class="" style="color: slateblue;">MCCB 3P LS  250A (42kA)</h4>
+                    <h5 style="color: darkgrey;"> Hãng sản xuất:	LS <br>
+                      Model:	ABN403C250A <br>
+                      Xuất xứ:	Hàn Quốc</h5>
+                    <h5 style="color: red;">Giá bán:5,291,200 VND</h5>
+                    <a href="#" class="btn btn-primary">Chi tiết</a>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                    <img src="../hinh/chitiet8.jpg" alt=""   width="200px" height="200px" id="hinhto">
+                    <h4 class="" style="color: slateblue;">MCCB 3P LS ABN53c 40A (18kA)</h4>
+                    <h5 style="color: darkgrey;"> Hãng sản xuất:	LS <br>
+                      Model:	ABN403C250A <br>
+                      Xuất xứ:	Hàn Quốc</h5>
+                    <h5 style="color: red;">Giá bán:3,591,200 VND</h5>
+                    <a href="#" class="btn btn-primary">Chi tiết</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="margin-top: 20px; margin-bottom: 50px;">
+        <div class="row">
+            <div class="col-lg " style="color: red;background-color:#EECBAD; "><h2>Dịch vụ nổi bật</h2></div>
+            </div>
+            <div class="row" style="text-align: center; margin-top: 20px;" >
+                <div class="col-lg-4">
+                    <img src="../hinh/giaohang.jpg" class="card-img-top" width="100" height="100">
+                    <b>SHIP GIAO HÀNG THEO TỪNG KHU VỰC</b></br>
+                    <p>Phí giao hàng áp dụng theo từng khu vực</p>
+                </div>
+                <div class="col-lg-4">
+                    <img src="../hinh/tien.jpg" class="card-img-top" width="100" height="100" >
+                    <b>CAM KẾT VỀ GIÁ</b></br>
+                    <p>Đảm bảo giá cả hợp lý</p>          
+                </div>
+                <div class="col-lg-4">         
+                    <img src="../hinh/24h.png" class="card-img-top" width="100" height="100" >
+                    <b>HỖ TRỢ ONLINE 24/7</b></br>
+                    <p>Đừng ngần ngại, hãy liên hệ với chúng tôi</p>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid" style="background-color:#EEA9B8; margin-top: 50px; padding-left: 180px;font-weight: 500;">
+            <div class="row">
+                <div class="col-lg-3">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Lịch sử mua hàng</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Tìm hiểu về mua trả góp</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Chính sách bảo hành</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Chính sách đổi trả</a>
+                        </li>      
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Giao hàng & nhận hàng</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Hướng dẫn mua online</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Bán hàng cho doanh nghiệp</a>
+                        </li>    
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Giới thiệu công ty</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Góp ý, khiếu nại</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Xem bản mobile</a>
+                        </li>                       
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Nội quy cửa hàng</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Chất lượng phục vụ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Thông tin trao thưởng</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">In hóa đơn điện tử</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Quy chế hoạt động</a>
+                        </li>                      
+                    </ul>
+                </div>            
+            </div>
+        </div>
+                  
+</body>
+</html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!-- BS css -->
+    <link rel="stylesheet" href="../bootstrap/css/csstrangchu.css">
+    <script src="../bootstrap/js/jquerytrangchu.js"></script>    
+    <script src="../bootstrap/js/jquerytrangchu2.js"></script>
+    <script src="../bootstrap/js/javascriptrangchu.js"></script>
+    <style>
+        #ername, #ermk, #er, #erdate, #erremk, #erem {
+            color: red;
+            font-style: italic;
+        }
+        body {
+            background: #f6f5f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+           font-family: 'Montserrat', sans-serif;
+        }
+        #frmlogin {
+            background-color: #FFFFFF;
+            justify-content: center;
+            padding: 0 50px;
+            border:1px solid black;
+        }
+    </style>
+    <script>
+        function kiemtra() {
+            var reg = /(^(09)\d{8}$)|(^(01)\d{9}$)/;
+            var regten = /^[A-Z]+[A-Za-z]*((\s)*[A-Z]+[A-Za-z]*)*$/;    
+            var gt = document.getElementById("txtname").value;
+            if (regten.test(gt)) {
+                document.getElementById("ername").innerHTML = "";
+                return true;
+            } else{
+                document.getElementById("ername").innerHTML = "Tên bạn nhập không đúng!";
+                return false;       
+            }    
+        }
+
+        function kiemtraemail() {
+            var regemail = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+            var em = document.getElementById("txtem").value;
+            if (regemail.test(em)) {
+                document.getElementById("erem").innerHTML = "";
+                return true;
+            } else{
+                document.getElementById("erem").innerHTML = "Email của bạn không đúng!";
+                return false;    
+            }   
+        }
+        // function kiem tra cho mat khau, mat khau la cac ky tu so va chu, có it nhat 1 ky tu dac biet va co it nhat 8 ky tu
+        function ktramk() {
+            var regmk = /^(\w){8,}[\!\@\#\$\%\^\&\_\)\(]*\w*$/;
+            var mk = document.getElementById("txtmk").value;
+            if(regmk.test(mk)) {
+                document.getElementById("ermk").innerHTML = "";
+                return true;
+            } else{
+                document.getElementById("ermk").innerHTML = "Mật khẩu phải có ít nhất 8 ký tự và 1 ký tự đặc biệt!";
+                return false;
+            }
+
+        }
+        //viet them funtion kiem tra nhap lai mat khau 
+        function ktramklai() {
+            var mk=document.getElementById("txtmk").value;
+            var mk2=document.getElementById("txtmk2").value;
+            if(ktramk()&&mk==mk2) {
+                document.getElementById("erremk").innerHTML = "";
+                return true;
+            } else{
+                document.getElementById("erremk").innerHTML = "Mat khau khong dung mat khau tren!!!";
+                return false;
+            }
+        }
+        //chon ngay sinh sao cho tuoi phải trên 16
+        function kiemtrans() {
+            var ns = document.getElementById("txtdate").value;
+            var datens = new Date(ns);
+            var datecurr = new Date();
+            var t = datecurr.getFullYear() - datens.getFullYear();
+            if(t<16||ns=="") {
+                document.getElementById("erdate").innerHTML = "Bạn đủ 16 tuổi mới được đăng ký nhé!";
+                return false;
+            } else{
+                document.getElementById("erdate").innerHTML = "";
+                 return true;
+            }
+        }
+
+        function ktrradio(){
+            var n = document.getElementById("frmlogin").length;
+             for (var i = 0; i < n; i++)
+                if (document.getElementById("frmlogin").elements[i].checked && document.getElementById("frmlogin").elements[i].type == "radio")
+                    gt = document.getElementById("frmlogin").elements[i].value;
+        }
+        //dang ky lay thong tin tren form insert vao table
+        var j = 1;
+        function dangky() {
+            var n = document.getElementById("frmlogin").length;
+            for (var i = 0; i < n; i++)
+                if (document.getElementById("frmlogin").elements[i].checked && document.getElementById("frmlogin").elements[i].type == "radio")
+                    gt = document.getElementById("frmlogin").elements[i].value;
+
+            // kiem tra tat ca du lieu dung moi cho them vao bang
+            if(kiemtra()&&kiemtrans()&&kiemtraemail()&&ktramk()&&ktramklai()) {
+                var t, ns,em, mk, mk2
+                t = document.getElementById("txtname").value;
+                ns = document.getElementById("txtdate").value;
+                em = document.getElementById("txtem").value;
+                mk = document.getElementById("txtmk").value;
+                mk2 = document.getElementById("txtmk2").value;
+
+                var bang =  document.getElementById("thongtin");
+                var newrow = bang.insertRow(j);
+                var newdata = newrow.insertCell(0);
+                var newdata1 = newrow.insertCell(1);
+                var newdata2 = newrow.insertCell(2);
+                var newdata3 = newrow.insertCell(3);
+                var newdata4 = newrow.insertCell(4);
+                var newdata5 = newrow.insertCell(5);
+
+                newdata.innerHTML = t;
+                newdata1.innerHTML = ns;
+                newdata2.innerHTML = em;
+                newdata3.innerHTML = gt;
+                newdata4.innerHTML = mk;
+                newdata5.innerHTML = mk2;
+                j++;
+            }
+        }
+    </script>
+
+</head>
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2" style="background-color:#81F7F3 ;"></div>
+            <div class="col-lg-8" style="background-color: #81F7F3  ;">
+                <img src="../hinh/vyyy.png" width="1000" height="300">
+            </div>
+            <div class="col-lg-2" style="background-color: #81F7F3  ;"></div>
+        </div>
+        <div class="row">
+            <div class="col-lg" style="background-color: black;">
+                <nav class="navbar" style="background-color: black;">
+                    <ul class="nav nav-tabs ">
+                        <li class="nav-item">
+                            <a class="nav-link" href="trangchu.html">Trang chủ</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Sản phẩm</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="dientienphat.html">Thiết bị Điện Tiến Phát</a>
+                                <a class="dropdown-item" href="#">Thiết bị điện Faco</a>
+                                <a class="dropdown-item" href="#">Thiết bị điện Rạng Đông</a>
+                                <a class="dropdown-item" href="#">Thiết bị điện Panasonic</a>
+                                <a class="dropdown-item" href="#">Thiết bị điện SINO</a>
+                                <a class="dropdown-item" href="#">Quạt điện cao cấp SENKO</a>
+                                <a class="dropdown-item" href="#">Đèn trang trí EUROTO</a>
+                                <a class="dropdown-item" href="#">Ống nhựa GOMAX</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="gioithieu.html">Giới thiệu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Khuyến mãi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#">Tin tức</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#">Tuyển dụng</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#">Liên hệ</a>
+                        </li>
+                    </ul>
+                    <div>
+                        <button type="button" class="btn btn-default btn-md" data-toggle="modal" data-target="#myModal">
+                            <span class="glyphicon glyphicon-shopping-cart"> </span>Giỏ hàng
+                        </button>
+                        <span style="color: yellow;" id="sl">Đã thêm: <i>0</i>  sp</span>
+                        <div class="modal" id="myModal">
+                            <div class="modal-dialog ">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4>Sản phẩm của bạn</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                     </div>
+                                    <div class="">
+                                        <div >        
+                                            <table class="table" id="tbl">           
+                                                <tr>         
+                                                    <th>Sản phẩm </th>       
+                                                    <th>Số lượng </th>         
+                                                    <th>Đơn giá</th>          
+                                                    <th>Thành tiền </th> 
+                                                </tr>         
+                                                <tr>            
+                                                    <th></th>            
+                                                    <th></th>            
+                                                    <th></th>           
+                                                    <th>Tổng tiền</th>      
+                                                </tr>      
+                                            </table>      
+                                        </div>
+                                    </div>     
+                                    <div class="modal-footer">      
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>   
+                                        <button type="button" class="btn btn-primary order" data-dismiss="modal">Thanh toán</button>  
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="form-inline" >
+                        <input class="form-control mr-sm-1" type="text" placeholder="Search">
+                        <button class="btn btn-success" type="submit">Search</button>
+                    </form>
+                </nav>
+            </div>
+        </div>
+        <div class="container">
+            <h1 style="text-align: center; color: #FF4B2B">Đăng ký thành viên</h1>               
+            <form id="frmlogin" style=" color: black;">
+                <div class="form-group" style="padding-top: 50px;">
+                    <label class="label-control col-xs-4 col-md-4">Tên đăng nhập</label>
+                    <div class="col-xs-8 col-md-8">
+                        <input type="text" id="txtname" placeholder="Name" class="form-control" onblur="kiemtra()" /><span id="ername">(*)</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="label-control col-xs-4 col-md-4">Ngày sinh</label>
+                    <div class="col-xs-8 col-md-8">
+                        <input type="date" id="txtdate" class="form-control" onblur="kiemtrans()" /><span id="erdate">(*)</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="label-control  col-xs-4 col-md-4">Giới tính</label>
+                    <div class="col-xs-8 col-md-8">
+                        <label class="radio-inline">
+                            <input type="radio" name="gt" class="form-control" value="Nam" />Nam</label>&nbsp;&nbsp;&nbsp;
+                            <label class="radio-inline">
+                                <input type="radio" name="gt" class="form-control" value="Nữ" />Nữ</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="label-control  col-xs-4 col-md-4">Email</label>
+                    <div class="col-xs-8 col-md-8">
+                        <input type="text" id="txtem" placeholder="Địa chỉ email" onblur="kiemtraemail()" class="form-control" />
+                        <span id="erem">(*)</span>
+                    </div>
+                </div>                           
+                <div class="form-group">
+                    <label class="label-control  col-xs-4 col-md-4">Mật khẩu</label>
+                    <div class="col-xs-8 col-md-8">
+                        <input type="password" id="txtmk" placeholder="Mật khẩu mới" onblur="ktramk()" class="form-control" />
+                        <span id="ermk">(*)</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="label-control  col-xs-4 col-md-4">Nhập lại mật khẩu</label>
+                    <div class="col-xs-8 col-md-8">
+                        <input type="password" id="txtmk2" placeholder="Nhập lại mật khẩu" onblur="ktramklai()"  class="form-control" />
+                        <span id="erremk">(*)</span>
+                    </div>
+                </div>
+                <div class="form-group" >
+                    <label class="label-control  col-xs-4 col-md-4" >&nbsp;</label>
+                    <div class="col-xs-8 col-md-8" >
+                        <input type="button" onclick="dangky();" class="btn btn-success" value="Đăng ký" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+
+    <div class="container" style="border:1px solid black;margin-top: 50px;">
+        <h3 style="text-align: center; color: #FF4B2B">Mời bạn xác nhận lại thông tin đã đăng ký!</h3>
+        <table class="table table-striped" id="thongtin">
+            <tr>
+                <th>Tên đăng nhập</th>
+                <th>Ngày sinh</th>
+                <th>Email</th>
+                <th>Giới tính</th>
+                <th>Mật khẩu</th>
+                <th>Nhập lại mật khẩu</th>
+            </tr>
+        </table>
+    </div>
+
+    <div class="container-fluid" style="background-color:#EEA9B8; margin-top: 50px; padding-left: 180px;font-weight: 500;">
+        <div class="row">
+            <div class="col-lg-3">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Lịch sử mua hàng</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tìm hiểu về mua trả góp</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Chính sách bảo hành</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Chính sách đổi trả</a>
+                    </li>  
+                </ul>
+            </div>
+            <div class="col-lg-3">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Giao hàng & nhận hàng</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Hướng dẫn mua online</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Bán hàng cho doanh nghiệp</a>
+                    </li>    
+                </ul>
+            </div>
+            <div class="col-lg-3">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Giới thiệu công ty</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Góp ý, khiếu nại</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Xem bản mobile</a>
+                    </li>        
+                </ul>
+            </div>
+            <div class="col-lg-3">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Nội quy cửa hàng</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Chất lượng phục vụ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Thông tin trao thưởng</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">In hóa đơn điện tử</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Quy chế hoạt động</a>
+                    </li>
+                </ul>
+            </div>  
+        </div>
+    </div>
+    
+</body>
+</html>
+    
